@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #333;
+            margin: 10px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        .scroll-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            padding: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+        }
+
+        .scroll-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+
+        .scroll-content a {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .scroll-container:hover .scroll-content {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Portfolio Gallery</h1>
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <a href="https://aiwonder.vercel.app" target="_blank"><img src="../../assets/wonderAI.png" alt="Wonder AI"
+                    class="gallery-img"></a>
+            <a href="https://github.com/fatiya17/info-wisata" target="_blank"><img src="../../assets/info-wisata.png"
+                    alt="Info Wisata" class="gallery-img"></a>
+            <a href="https://awerlain.vercel.app/" target="_blank"><img src="../../assets/awerlain.png" alt="Awerlain"
+                    class="gallery-img"></a>
+            <a href="https://revou-coding-camp.github.io/codingcamp-21-jul-25-fatiya17/" target="_blank"><img
+                    src="../../assets/todolist.jpg" alt="Todo List" class="gallery-img"></a>
+            <a href="https://revou-fundamental-course.github.io/5-aug-24-fatiya17/" target="_blank"><img
+                    src="../../assets/bmi-calculator.png" alt="BMI Calculator" class="gallery-img"></a>
+
+            <!-- Duplikasi untuk efek seamless -->
+            <a href="https://aiwonder.vercel.app" target="_blank"><img src="../../assets/wonderAI.png" alt="Wonder AI"
+                    class="gallery-img"></a>
+            <a href="https://github.com/fatiya17/info-wisata" target="_blank"><img src="../../assets/info-wisata.png"
+                    alt="Info Wisata" class="gallery-img"></a>
+            <a href="https://awerlain.vercel.app/" target="_blank"><img src="../../assets/awerlain.png" alt="Awerlain"
+                    class="gallery-img"></a>
+            <a href="https://revou-coding-camp.github.io/codingcamp-21-jul-25-fatiya17/" target="_blank"><img
+                    src="../../assets/todolist.jpg" alt="Todo List" class="gallery-img"></a>
+            <a href="https://revou-fundamental-course.github.io/5-aug-24-fatiya17/" target="_blank"><img
+                    src="../../assets/bmi-calculator.png" alt="BMI Calculator" class="gallery-img"></a>
+        </div>
+    </div>
+    <!-- hyperlink dari gambar  -->
+    <p>(Klik gambar untuk melihat project)</p>
+</body>
+
+</html>

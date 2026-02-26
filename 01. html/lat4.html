@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Form</title>
+</head>
+
+<body>
+    <h2>Formulir</h2>
+    <hr>
+    <br>
+
+    <form action="">
+        <label for="">Masukkan Nama Anda:</label>
+        <input type="text" name="nama" id="nama" placeholder="Isi Nama Anda" size="25" maxlength="20">
+        <br><br>
+
+        <label for="">Masukkan Password:</label>
+        <input type="password" name="password" id="password" placeholder="Isi Password Anda" size="25">
+        <br><br>
+
+        <label for="email">Masukkan Email Anda:</label>
+        <input type="email" name="email" id="email" placeholder="Isi Email Anda" size="25">
+        <br><br>
+
+        <label for="warna">Masukkan Warna Favorit Anda:</label>
+        <input type="color" name="warna" id="warna" placeholder="Isi Warna Anda" size="25">
+        <br><br>
+
+        <label for="tanggal">Masukkan Tanggal Lahir Anda:</label>
+        <input type="date" name="tanggal" id="tanggal" placeholder="Isi Tanggal Lahir Anda" size="25">
+        <br><br>
+
+        <label for="nilai">Input Nilai Anda:</label>
+        <input type="number" name="nilai" id="nilai" placeholder="Isi Nilai Anda" size="25">
+        <br><br>
+
+        <label for="minggu">Pilih Minggu:</label>
+        <input type="week" name="minggu" id="minggu" placeholder="Isi Minggu Anda" size="25">
+        <br><br>
+
+        <label for="bulan">Pilih Bulan:</label>
+        <input type="month" name="bulan" id="bulan" placeholder="Isi Bulan Anda" size="25">
+        <br><br>
+
+        <label for="foto">Upload Foto:</label>
+        <input type="file" name="foto" id="foto" placeholder="Upload Foto Anda" size="25">
+        <br><br>
+
+        <label for="hobi">Hobi:</label><br>
+        <input type="checkbox" name="hobi" id="hobi1" value="futsal">Futsal
+        <br>
+
+        <input type="checkbox" name="hobi" id="hobi2" value="basket">Basket
+        <br>
+        <input type="checkbox" name="hobi" id="hobi3" value="tenis">Tenis
+        <br>
+        <input type="checkbox" name="hobi" id="hobi4" value="bola">Bola
+        <br><br>
+
+        <label for="jenis_kelamin">Jenis Kelamin:</label>
+        <br>
+        <input type="radio" name="jenis_kelamin" id="laki_laki" value="laki_laki">Laki-laki
+        <br>
+        <input type="radio" name="jenis_kelamin" id="perempuan" value="perempuan">Perempuan
+        <br><br>
+
+        <label for="minggu">Prodi STT NF:</label>
+        <select name="prodi" id="prodi">
+            <option value="ti">Teknik Informatika</option>
+            <option value="si">Sistem Informasi</option>
+            <option value="bd">Bisnis Digital</option>
+            <option value="cs">Cyber Security</option>
+        </select>
+        <br><br>
+        
+        <label for="komentar">Kolom Komentar:</label>
+        <br>
+        <textarea name="komentar" id="komentar" cols="30" rows="10" placeholder="Isi Komentar Anda"></textarea>
+        <br><br>
+
+        <input type="submit" name="proses" value="Simpan">
+        <input type="reset" name="unproses" value="Batal">
+    </form>
+</body>
+
+</html>
