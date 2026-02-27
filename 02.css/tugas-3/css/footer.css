@@ -1,0 +1,16 @@
+@import 'style.css';
+
+body {
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+footer {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
