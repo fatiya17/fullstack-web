@@ -1,0 +1,150 @@
+html, body {
+    background-color: #f0f6fb;
+    cursor: url("../assets/molang-spoon-ice-cream-pack.png") 0 0, auto;
+}
+
+h1 {
+    color: #4682b4;
+    font-family: Arial, sans-serif;
+}
+
+h2,
+h3 {
+    color: #62a9e2;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+#tulis1 {
+    color: #93c6f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: line-through;
+}
+
+#tulis2 {
+    color: #93f0b8;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-transform: lowercase;
+    text-decoration: dotted;
+}
+
+div.tulis3 {
+    color: #f0af93;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: justify;
+}
+
+hr {
+    border: 20px solid #b44662;
+    border-radius: 40px;
+}
+
+h1.marquee {
+    background-color: #efdab3;
+    border: 5px solid #ebe127;
+    border-radius: 30px;
+    color: white;
+}
+
+/* pseudp class selector */
+.tautan {
+    color: #f0af93;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.tautan:link {
+    color: #000;
+}
+
+.tautan:visited {
+    color: #5f1d8b;
+}
+
+.tautan:hover {
+    color: #cef093;
+}
+
+.tautan:active {
+    color: #ce7650;
+}
+
+#tombol {
+    background-color: #6c9bce;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+#tombol:hover {
+    background-color: #93c6f0;
+    color: #000;
+}
+
+div.margin {
+    /* jarak di luar kotak */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 5px solid #f0af93;
+    background-color: #e7c1b1;
+
+    /* jarak antar text dengan kotak pada text */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-shadow: 5px 8px 3px #ebe4e0;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+/* pseude elemen (::) */
+div.dropcap::first-letter {
+    font-size: 200%;
+    color: #f0af93;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    float: left;
+}
+
+img.pojok {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 1px;
+    margin-bottom: 20px;
+    border: 2px solid #a65a3a;
+    float: left;
+}
+
+/* ul dan ol style */
+ol {
+    list-style-image: url(../assets/molang-spoon-ice-cream-pack\(1\).png);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-image: url(../assets/molang-spoon-ice-cream-pack\(1\).png);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}

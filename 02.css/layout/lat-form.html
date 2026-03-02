@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Tiket Travel</title>
+    <link rel="stylesheet" href="./css/form.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">Form Pemesanan Tiket Travel</h1>
+        <form class="form-contoh" method="POST" action="">
+            <!-- nama lengkap -->
+             <label for="fullname">Nama Lengkap:</label>
+             <input type="text" name="fullname" id="fullname" placeholder="Masukkan Nama Lengkap" required>
+             <br><br>
+
+            <!-- email -->
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Masukkan Email" required>
+            <br><br>
+
+            <!-- nomor telepon -->
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" name="phone" id="phone" placeholder="Masukkan Nomor Telepon" required>
+            <br><br>
+
+            <!-- rute perjalanan -->
+            <label for="route">Rute Perjalanan:</label>
+            <select name="route" id="route" required>
+                <option value="">Pilih Rute</option>
+                <option value="jakarta-bandung">Jakarta - Bandung</option>
+                <option value="jakarta-surabaya">Jakarta - Surabaya</option>
+                <option value="bandung-surabaya">Bandung - Surabaya</option>
+            </select>
+            <br><br>
+
+            <!-- tanggal keberangkatan -->
+            <label for="departure">Tanggal Keberangkatan:</label>
+            <input type="date" name="date" id="date" required>
+            <br><br>
+
+            <!-- waktu keberangkatan -->
+            <label for="time">Waktu Keberangkatan:</label>
+            <select name="time" id="time" required>
+                <option value="">Pilih Waktu</option>
+                <option value="pagi">Pagi (08:00)</option>
+                <option value="siang">Siang (12:00)</option>
+                <option value="sore">Sore (16:00)</option>
+                <option value="malam">Malam (20:00)</option>
+            </select>
+            <br><br>
+
+            <!-- jumlah penumpang -->
+            <label for="passengers">Jumlah Penumpang:</label>
+            <input type="number" name="passengers" id="passengers" placeholder="Masukkan Jumlah Penumpang" required>
+            <br><br>
+
+            <!-- metode pembayaran -->
+            <label for="payment">Metode Pembayaran:</label>
+            <select name="payment" id="payment" required>
+                <option value="">Pilih Metode Pembayaran</option>
+                <option value="credit-card">Kartu Kredit</option>
+                <option value="bank-transfer">Transfer Bank</option>
+                <option value="e-wallet">E-Wallet</option> 
+            </select>
+            <br><br>
+
+            <!-- tombol submit -->
+            <button type="submit">Pesan Tiket</button>
+            <button type="reset">Batal</button>
+        </form>
+    </div>
+</body>
+
+</html>

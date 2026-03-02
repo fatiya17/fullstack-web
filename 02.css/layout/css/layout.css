@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;      
+}
+
+/* header */
+.header {
+    background-image: url(../../tugas4_css_fatiyalabibah_sttnf/assets/banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 60px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(130, 152, 203);
+    justify-content: center;
+    display: flex;
+}
+
+.navbar a {
+    float: left;
+    text-decoration: none;
+    padding: 14px 20px;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.column.side {
+    width: 25%;
+}
+
+.column.middle {
+    width: 50%;
+}
+
+.column {
+    float: left;
+    padding: 15px;
+}
+
+.footer {
+    background-color: rgb(130, 152, 203);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}

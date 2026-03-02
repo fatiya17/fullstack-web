@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas Frameset - Fullstack Web</title>
+</head>
+<!-- setting frameset  -->
+<frameset rows="20%, 8%, *, 8%" border="0" frameborder="0" framespacing="0">
+    <!-- setting frame -->
+    <frame src="header.html" name="header" noresize scrolling="no" marginwidth="0" marginheight="0"></frame>
+    <frame src="navigation.html" name="navigation" noresize scrolling="no" marginwidth="0" marginheight="0"></frame>
+    <frameset cols="20%, *, 20%" border="0" frameborder="0" framespacing="0">
+        <frame src="left.html" name="leftContent" marginwidth="0" marginheight="0"></frame>
+        <frame src="home.html" name="mainContent" marginwidth="10" marginheight="10"></frame>
+        <frame src="right.html" name="rightContent" marginwidth="0" marginheight="0"></frame>
+    </frameset>
+    <frame src="footer.html" name="footer" noresize scrolling="no" marginwidth="0" marginheight="0"></frame>
+</frameset>
+<noframes>
+    <body>
+        <p>Browser Anda tidak mendukung frameset.</p>
+    </body>
+</noframes>
+</html>
