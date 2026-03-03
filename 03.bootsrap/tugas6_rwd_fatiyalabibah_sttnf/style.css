@@ -1,0 +1,122 @@
+:root {
+    --apple-purple: #8e44ad;
+    --apple-green: #2ecc71;
+    --apple-dark: #1d1d1f;
+    --apple-gray: #f5f5f7;
+    --apple-silver: #d2d2d7;
+    --white: #ffffff;
+    --radius: 18px;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--apple-dark);
+}
+
+/* Glass Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Carousel Hero */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: var(--radius);
+    padding: 20px;
+    bottom: 50px;
+}
+
+span {
+    color: rgb(152, 73, 165);
+}
+
+/* Containers */
+.main-wrapper {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+/* Apple Cards */
+.card-apple {
+    background: var(--apple-gray);
+    border: none;
+    border-radius: var(--radius);
+    padding: 25px;
+    transition: var(--transition);
+}
+
+.card-apple:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Sidebars */
+.sidebar-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--apple-purple);
+    margin-bottom: 20px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 12px;
+}
+
+.sidebar-list a {
+    text-decoration: none;
+    color: var(--apple-dark);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.sidebar-list a:hover {
+    color: var(--apple-purple);
+    padding-left: 5px;
+}
+
+/* Footer */
+.footer-apple {
+    background: var(--apple-gray);
+    padding: 40px 0;
+    margin-top: 80px;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    margin: 0 15px;
+    color: var(--apple-dark);
+    transition: var(--transition);
+}
+
+.social-icons i:hover {
+    color: var(--apple-purple);
+}
+
+/* Grid Specifics */
+.main-content {
+    background: white;
+    min-height: 400px;
+}
