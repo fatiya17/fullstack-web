@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembelian Barang - Switch Case</title>
+</head>
+<body>
+    <script>
+        //ada pelanggan membeli barang elektronik
+        //barng: tv=>3jt, motor=>15jt, kulkas=>5jt
+        //tentukan pembelian barang dan berapa yang dibeli
+        //tambahkan proses diskon dari setiap barang
+        //lalu cetak hasil pembelian barang dan total
+
+        let pembeli = "Fatiya";
+        let barang = "motor";
+        let harga_satuan = 0;
+
+        switch (barang) {
+            case "tv":
+                harga_satuan = 3000000;
+                break;
+            case "motor":
+                harga_satuan = 15000000;
+                break;
+            case "kulkas":
+                harga_satuan = 5000000;
+                break;
+            default:
+                document.write("Barang tidak tersedia");
+        }
+
+        //deklarasi variable proses
+        let jml_beli = 10;
+        let bruto = harga_satuan * jml_beli;
+        let ppn = bruto * 0.11;
+
+        //membuat minimal diskon dari pembelian produk diatas
+        let diskon = 0;
+        if(barang === "tv") diskon = bruto * 0.3;
+        else if(barang === "motor") diskon = bruto * 0.2;
+        else diskon = bruto * 0.05;
+        let hasil_diskon = bruto - diskon;
+
+        //cetak proses diatas
+        document.write("<h1>Data Pembelian<br></h1>");
+        document.write(
+            "Pembeli: " + pembeli + "<br>Barang: " + barang + "<br>Harga Satuan: " + harga_satuan + "<br>Jumlah Beli: " + jml_beli + "<br>Bruto: " + bruto + "<br>PPN: " + ppn + "<br>Diskon: " + diskon + "<br>Total Bayar: " + hasil_diskon
+        );
+    </script>
+        

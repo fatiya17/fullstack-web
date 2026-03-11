@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+<body>
+    <!-- switch case: sebagai pengecekan sebuah nilai
+    break: untuk menghentikan pengecekan
+    case: untuk mengecek sebuah nilai
+    default: default -->
+
+    <script>
+        // let ukuran = "M"
+        let ukuran = prompt("Masukkan ukuran (S, M, L):");
+        switch (ukuran) {
+            case "S":
+                document.write("Small");
+                break;
+            case "M":
+                document.write("Medium");
+                break;
+            case "L":
+                document.write("Large");
+                break;
+            default:
+                document.write("Ukuran tidak valid");
+        }
+    </script>
+    <hr>
+    <script>
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Minggu"
+                break;
+            case 1:
+                day = "Senin"
+                break;
+            case 2:
+                day = "Selasa"
+                break;
+            case 3:
+                day = "Rabu";
+                break;
+            case 4:
+                day = "Kamis";
+                break;
+            case 5:
+                day = "Jumat";
+                break;
+            case 6:
+                day = "Sabtu";
+                break;
+            default:
+                day = "Hari tidak valid";
+        }
+        document.write("Hari ini adalah " + day);
+    </script>
+</body>
+</html>
