@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 - Condition & Loop</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 30px;
+            color: #568456;
+        }
+
+        table {
+            margin: 40px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 12px;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #c3dfc3;
+        }
+
+        tfoot {
+            background-color: #f3f9e3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // diketahui: 
+        // - pegawai: Dodi Prayodi
+        // - umur: 25 tahun
+        // - jabatan: manajer
+        // - status: menikah
+
+        let pegawai = "Dodi Prayodi";
+        let umur = 25;
+        let jabatan = "manajer";
+        let status = "menikah";
+
+        // 3. if kondisi gaji pokok berdasarkan jabatan
+        let gajiPokok;
+
+        if (jabatan === "manajer") {
+            gajiPokok = 15000000;
+        } else if (jabatan === "asisten manajer") {
+            gajiPokok = 10000000;
+        } else if (jabatan === "staff") {
+            gajiPokok = 5000000;
+        } else {
+            gajiPokok = 0;
+        }
+
+        // 4. tunjangan jabatan 15% dari gaji pokok
+        let tunjanganJabatan = 0.15 * gajiPokok;
+
+        // 5. bpjs 10% dari gaji pokok
+        let bpjs = 0.10 * gajiPokok;
+
+        // 6. tunjangan keluarga: status menikah 20% dari gaji pokok (ternary)
+        let tunjanganKeluarga = (status === "menikah") ? 0.20 * gajiPokok : 0;
+
+        // 7. total gaji: jumlahkan seluruh element gaji
+        let totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+
+        // tugas: cetak data pegawai dalam bentuk tabel
+
+        document.write(`
+        <h2>Data Gaji Pegawai Dalam Tabel</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+        
+        <!-- 1. judul kolom menggunakan thead -->
+        <thead>
+            <tr>
+                <th>Nama Pegawai</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>BPJS</th>
+                <th>Tunjangan Keluarga</th>
+            </tr>
+        </thead>
+
+        <!-- 2. data pegawai menggunakan tbody panggil variabel -->
+        <tbody>
+            <tr>
+                <td>${pegawai}</td>
+                <td>${umur} tahun</td>
+                <td>${jabatan}</td>
+                <td>${status}</td>
+                <td>Rp ${gajiPokok.toLocaleString()}</td>
+                <td>Rp ${tunjanganJabatan.toLocaleString()}</td>
+                <td>Rp ${bpjs.toLocaleString()}</td>
+                <td>Rp ${tunjanganKeluarga.toLocaleString()}</td>
+            </tr>
+        </tbody>
+
+        <!-- total gaji gunakan tfoot -->
+        <tfoot>
+            <tr>
+                <th colspan="7">Total Gaji</th>
+                <th>Rp ${totalGaji.toLocaleString()}</th>
+            </tr>
+        </tfoot>
+
+        </table>
+        `);
+
+    </script>
+</body>
+
+</html>
