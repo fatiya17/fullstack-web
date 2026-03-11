@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF</title>
+</head>
+<body>
+    <script>
+        let pelanggan = "Fatiya"
+        let total = 5000
+        let keterangan = ""
+
+        //jika total belanja pelanggan > 5000, maka "Selamat Fatiya anda mendapatkan hadiah" Selain itu "Maaf Fatiya, anda belum mendapatkan hadiah"
+        if (total > 5000) {
+            keterangan = "Selamat " + pelanggan + " anda mendapatkan hadiah";
+        } else {
+            keterangan = "Terima kasih " + pelanggan + ", anda belum mendapatkan hadiah";
+        }
+        document.write(keterangan);
+    </script>
+</body>
+</html>

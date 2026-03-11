@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping For</title>
+</head>
+<body>
+    <script>
+        let x;
+        for(x=1; x<100; x++){
+            document.write("Saya sedang belajar JavaScript di NFA <br>");
+        }
+
+        // let y;
+        // for(y=100; y>0; y--){
+        //     document.write(y + "<br>");
+        // }
+
+        //while loop
+        let b=0;
+        while(b<10){
+            document.write("Perulangan ke-" + b + "<br>");
+            b++;
+        }
+    </script>
+    <hr><br>
+    <script>
+        let no;
+        for(no=1; no<=10; no++){
+            if(no == 20) continue; //lanjut looping tetapi skip angkanya
+            if(no == 30) break; //benar" keluar dari looping
+            document.write("No. " + no + "<br>");
+        }
+    </script>
+    <br>
+    <script>
+        let angka;
+        for(angka=100; angka>=50; angka--){
+            if(angka == 20) 
+            document.write("No. " + angka + "<br>");
+        }
+    </script>
+    <hr><br>
+    <script>
+        let nilai;
+        for(nilai=1; nilai<=50; nilai++){
+            //tentukan bilangan ganjil dengan modulus 2 sisa 1
+            if(nilai % 2 == 1){
+                document.write("Nilai " + nilai + "<br>");
+            }
+        }
+    </script>
+    <hr><br>
+    <script>
+        //radio button
+        let r;
+        for (r=10; r>=0; r--){
+            document.write("<input type='radio' name='jumlah' value='" + r + "'> " + r + "<br>");
+        }
+    </script>
+</body>
+</html>

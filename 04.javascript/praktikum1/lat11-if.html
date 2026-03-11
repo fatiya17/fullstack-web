@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF NESTED</title>
+</head>
+<body>
+    <script>
+        let username = prompt("Masukkan username:");
+        let password = prompt("Masukkan password:");
+
+        //jika username dan password benar, maka selamat datang, jika password salah, coba lagi, jika username dan password salah, maka tidak terdaftar
+        if (username === "admin") {
+            if (password === "admin123") {
+                document.write("Selamat datang, " + username);
+            } else {
+                document.write("Password salah, coba lagi");
+            }
+        } else {
+            document.write("Username dan password salah, Anda tidak terdaftar");
+        }
+    </script>
+</body>
+</html>
