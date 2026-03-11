@@ -77,33 +77,39 @@
     </div>
 
     <script>
-        // ========================================
-        // Fungsi untuk menghitung luas persegi panjang
-        // Parameter: panjang dan lebar
-        // Rumus: Luas = panjang × lebar
-        // ========================================
+        /*
+        ========================================
+        Fungsi untuk menghitung luas persegi panjang
+        Parameter: panjang dan lebar
+        Rumus: Luas = panjang × lebar
+        ========================================
+        */
         function hitungLuasPersegiPanjang(panjang, lebar) {
             // Menghitung luas dengan mengalikan panjang dan lebar
             let luas = panjang * lebar;
             return luas;
         }
 
-        // ========================================
-        // Fungsi untuk menghitung luas bujur sangkar
-        // Parameter: sisi
-        // Rumus: Luas = sisi × sisi
-        // ========================================
+        /*
+        ========================================
+        Fungsi untuk menghitung luas bujur sangkar
+        Parameter: sisi
+        Rumus: Luas = sisi × sisi
+        ========================================
+        */
         function hitungLuasBujurSangkar(sisi) {
             // Menghitung luas dengan mengalikan sisi dengan sisi itu sendiri
             let luas = sisi * sisi;
             return luas;
         }
 
-        // ========================================
-        // Fungsi untuk menghitung luas segitiga
-        // Parameter: alas dan tinggi
-        // Rumus: Luas = (alas × tinggi) / 2
-        // ========================================
+        /*
+        ========================================
+        Fungsi untuk menghitung luas segitiga
+        Parameter: alas dan tinggi
+        Rumus: Luas = (alas × tinggi) / 2
+        ========================================
+        */
         function hitungLuasSegitiga(alas, tinggi) {
             // Menghitung luas dengan rumus setengah dari alas dikali tinggi
             let luas = (alas * tinggi) / 2;
@@ -121,9 +127,11 @@
         let alasSegitiga = 10;           
         let tinggiSegitiga = 14;       
 
-        // ========================================
-        // MEMANGGIL FUNGSI DAN MENYIMPAN HASIL
-        // ========================================
+        /*
+        ========================================
+        MEMANGGIL FUNGSI DAN MENYIMPAN HASIL
+        ========================================
+        */
         
         // Menghitung luas persegi panjang
         let luasPersegiPanjang = hitungLuasPersegiPanjang(panjangPersegiPanjang, lebarPersegiPanjang);
@@ -134,9 +142,11 @@
         // Menghitung luas segitiga
         let luasSegitiga = hitungLuasSegitiga(alasSegitiga, tinggiSegitiga);
 
-        // ========================================
-        // MENAMPILKAN HASIL KE HALAMAN WEB
-        // ========================================
+        /*
+        ========================================
+        MENAMPILKAN HASIL KE HALAMAN WEB
+        ========================================
+        */
         let output = document.getElementById('output');
 
         // Output untuk Persegi Panjang
