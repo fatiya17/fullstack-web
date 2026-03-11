@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 - Menghitung Luas Bangun Datar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .result {
+            background-color: #e8f5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #5c805d;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .result-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            padding: 15px;
+        }
+        .result-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .result-content {
+            flex: 1;
+        }
+        .result h3 {
+            margin-top: 0;
+            color: #557456;
+            margin-bottom: 15px;
+        }
+        .calculation {
+            color: #555;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .final-result {
+            font-weight: bold;
+            color: #1b5e20;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tugas 1 - Menghitung Luas Bangun Datar</h1>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        /*
+        ========================================
+        Fungsi untuk menghitung luas persegi panjang
+        Parameter: panjang dan lebar
+        Rumus: Luas = panjang × lebar
+        ========================================
+        */
+        function hitungLuasPersegiPanjang(panjang, lebar) {
+            // Menghitung luas dengan mengalikan panjang dan lebar
+            let luas = panjang * lebar;
+            return luas;
+        }
+
+        /*
+        ========================================
+        Fungsi untuk menghitung luas bujur sangkar
+        Parameter: sisi
+        Rumus: Luas = sisi × sisi
+        ========================================
+        */
+        function hitungLuasBujurSangkar(sisi) {
+            // Menghitung luas dengan mengalikan sisi dengan sisi itu sendiri
+            let luas = sisi * sisi;
+            return luas;
+        }
+
+        /*
+        ========================================
+        Fungsi untuk menghitung luas segitiga
+        Parameter: alas dan tinggi
+        Rumus: Luas = (alas × tinggi) / 2
+        ========================================
+        */
+        function hitungLuasSegitiga(alas, tinggi) {
+            // Menghitung luas dengan rumus setengah dari alas dikali tinggi
+            let luas = (alas * tinggi) / 2;
+            return luas;
+        }
+
+        // Deklarasi variabel untuk persegi panjang
+        let panjangPersegiPanjang = 8;  
+        let lebarPersegiPanjang = 6;     
+
+        // Deklarasi variabel untuk bujur sangkar
+        let sisiBujurSangkar = 12;       
+
+        // Deklarasi variabel untuk segitiga
+        let alasSegitiga = 10;           
+        let tinggiSegitiga = 14;       
+
+        /*
+        ========================================
+        MEMANGGIL FUNGSI DAN MENYIMPAN HASIL
+        ========================================
+        */
+        
+        // Menghitung luas persegi panjang
+        let luasPersegiPanjang = hitungLuasPersegiPanjang(panjangPersegiPanjang, lebarPersegiPanjang);
+
+        // Menghitung luas bujur sangkar
+        let luasBujurSangkar = hitungLuasBujurSangkar(sisiBujurSangkar);
+
+        // Menghitung luas segitiga
+        let luasSegitiga = hitungLuasSegitiga(alasSegitiga, tinggiSegitiga);
+
+        /*
+        ========================================
+        MENAMPILKAN HASIL KE HALAMAN WEB
+        ========================================
+        */
+        let output = document.getElementById('output');
+
+        // Output untuk Persegi Panjang
+        output.innerHTML += `
+            <div class="result">
+                <div class="result-image">
+                    <img src="assets/persegi-panjang.png" alt="Persegi Panjang">
+                </div>
+                <div class="result-content">
+                    <h3>1. Persegi Panjang</h3>
+                    <div class="calculation">Panjang = ${panjangPersegiPanjang} cm</div>
+                    <div class="calculation">Lebar = ${lebarPersegiPanjang} cm</div>
+                    <div class="calculation">Rumus: Luas = panjang × lebar</div>
+                    <div class="calculation">Perhitungan: ${panjangPersegiPanjang} × ${lebarPersegiPanjang}</div>
+                    <div class="final-result">Luas = ${luasPersegiPanjang} cm²</div>
+                </div>
+            </div>
+        `;
+
+        // Output untuk Bujur Sangkar
+        output.innerHTML += `
+            <div class="result">
+                <div class="result-image">
+                    <img src="assets/bujur-sangkar.png" alt="Bujur Sangkar">
+                </div>
+                <div class="result-content">
+                    <h3>2. Bujur Sangkar</h3>
+                    <div class="calculation">Sisi = ${sisiBujurSangkar} cm</div>
+                    <div class="calculation">Rumus: Luas = sisi × sisi</div>
+                    <div class="calculation">Perhitungan: ${sisiBujurSangkar} × ${sisiBujurSangkar}</div>
+                    <div class="final-result">Luas = ${luasBujurSangkar} cm²</div>
+                </div>
+            </div>
+        `;
+
+        // Output untuk Segitiga
+        output.innerHTML += `
+            <div class="result">
+                <div class="result-image">
+                    <img src="assets/segitiga.png" alt="Segitiga">
+                </div>
+                <div class="result-content">
+                    <h3>3. Segitiga</h3>
+                    <div class="calculation">Alas = ${alasSegitiga} cm</div>
+                    <div class="calculation">Tinggi = ${tinggiSegitiga} cm</div>
+                    <div class="calculation">Rumus: Luas = (alas × tinggi) / 2</div>
+                    <div class="calculation">Perhitungan: (${alasSegitiga} × ${tinggiSegitiga}) / 2</div>
+                    <div class="final-result">Luas = ${luasSegitiga} cm²</div>
+                </div>
+            </div>
+        `;
+
+        // Menampilkan hasil juga di console untuk debugging
+        console.log("=== HASIL PERHITUNGAN LUAS BANGUN DATAR ===");
+        console.log(`Luas Persegi Panjang: ${luasPersegiPanjang} cm²`);
+        console.log(`Luas Bujur Sangkar: ${luasBujurSangkar} cm²`);
+        console.log(`Luas Segitiga: ${luasSegitiga} cm²`);
+    </script>
+</body>
+</html>
