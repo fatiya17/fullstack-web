@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 3 - Manajemen Produk Toko</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 30px;
+            color: #568456;
+        }
+
+        h3 {
+            width: 80%;
+            margin: 25px auto 10px;
+            color: #3f6b3f;
+        }
+
+        .info {
+            width: 80%;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #f3f9e3;
+            border: 1px solid #c3dfc3;
+        }
+
+        table {
+            margin: 20px auto 40px;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 12px;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #c3dfc3;
+        }
+
+        tfoot {
+            background-color: #f3f9e3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Sistem Manajemen Produk Toko</h2>
+    <div class="info" id="infoAksi"></div>
+    <div id="hasilProduk"></div>
+
+    <script>
+        // 1. array produkToko berisi data produk awal
+        let produkToko = [
+            { id: 1, nama: "Laptop", harga: 7000000, stok: 5 },
+            { id: 2, nama: "Mouse", harga: 200000, stok: 10 },
+            { id: 3, nama: "Keyboard", harga: 350000, stok: 7 }
+        ];
+
+        // 2. fungsi untuk membuat id baru otomatis
+        function buatIdBaru() {
+            if (produkToko.length === 0) {
+                return 1;
+            }
+
+            let idTerbesar = Math.max(...produkToko.map(produk => produk.id));
+            return idTerbesar + 1;
+        }
+
+        // 3. fungsi tambahProduk(nama, harga, stok)
+        // menambahkan produk baru ke dalam array produkToko
+        function tambahProduk(nama, harga, stok) {
+            let produkBaru = {
+                id: buatIdBaru(),
+                nama: nama,
+                harga: harga,
+                stok: stok
+            };
+
+            produkToko.push(produkBaru);
+            return `Produk ${nama} berhasil ditambahkan.`;
+        }
+
+        // 4. fungsi hapusProduk(id)
+        // menghapus produk berdasarkan id
+        function hapusProduk(id) {
+            let indexProduk = produkToko.findIndex(produk => produk.id === id);
+
+            if (indexProduk === -1) {
+                return `Produk dengan id ${id} tidak ditemukan.`;
+            }
+
+            let produkDihapus = produkToko[indexProduk].nama;
+            produkToko.splice(indexProduk, 1);
+            return `Produk ${produkDihapus} berhasil dihapus.`;
+        }
+
+        // 5. fungsi tampilkanProduk(dataProduk, judulProses)
+        // menampilkan daftar produk dalam bentuk tabel sesuai proses
+        function tampilkanProduk(dataProduk, judulProses) {
+            let totalStok = 0;
+            let isiBaris = "";
+
+            for (let i = 0; i < dataProduk.length; i++) {
+                totalStok += dataProduk[i].stok;
+
+                isiBaris += `
+                    <tr>
+                        <td>${dataProduk[i].id}</td>
+                        <td>${dataProduk[i].nama}</td>
+                        <td>Rp ${dataProduk[i].harga.toLocaleString('id-ID')}</td>
+                        <td>${dataProduk[i].stok}</td>
+                    </tr>
+                `;
+            }
+
+            document.getElementById('hasilProduk').innerHTML += `
+                <h3>${judulProses}</h3>
+                <table>
+                    <!-- judul kolom menggunakan thead -->
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Produk</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                        </tr>
+                    </thead>
+
+                    <!-- data produk menggunakan tbody -->
+                    <tbody>
+                        ${isiBaris}
+                    </tbody>
+
+                    <!-- total stok menggunakan tfoot -->
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">Total Stok Produk</th>
+                            <th>${totalStok}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            `;
+        }
+
+        // 6. fungsi untuk menyalin data produk
+        function salinDataProduk() {
+            return JSON.parse(JSON.stringify(produkToko));
+        }
+
+        // 7. simulasi penggunaan fungsi
+        let logAksi = [];
+
+        // proses 1: tampilkan data produk awal
+        tampilkanProduk(salinDataProduk(), "Proses 1: Data Produk Awal");
+
+        // proses 2: tambah produk lalu tampilkan tabel
+        logAksi.push(tambahProduk("Headset", 500000, 6));
+        tampilkanProduk(salinDataProduk(), "Proses 2: Setelah tambahProduk('Headset', 500000, 6)");
+
+        // proses 3: hapus produk lalu tampilkan tabel
+        logAksi.push(hapusProduk(2));
+        tampilkanProduk(salinDataProduk(), "Proses 3: Setelah hapusProduk(2)");
+
+        // 8. tampilkan pesan aksi di halaman
+        document.getElementById('infoAksi').innerHTML = `
+            <strong>Hasil Aksi:</strong><br>
+            ${logAksi.join('<br>')}
+        `;
+
+        // 9. tampilkan juga di console
+        console.log("=== DATA PRODUK TOKO ===");
+        console.log(produkToko);
+    </script>
+</body>
+
+</html>
