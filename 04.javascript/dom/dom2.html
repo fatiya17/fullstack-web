@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <img src="image1.webp" alt="Gambar 1">
+    <button onclick="ubahGambar()">Ubah Gambar</button>
+
+    <script>
+        function ubahGambar(){
+            document.getElementById("gambar").setAttribute("src", "image2.webp");
+            document.getElementById("gambar").setAttribute("alt", "Gambar 2");
+        }
+    </script>
+</body>
+</html>
