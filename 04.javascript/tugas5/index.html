@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Produk</title>
+    <!-- FontAwesome for Trash Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --apple-bg: #ececf1;
+            /* slightly warmer grey */
+            --apple-card: #ffffff;
+            --apple-text: #111111;
+            /* deeper black */
+            --apple-text-muted: #6e6e73;
+            --apple-green: #34c759;
+            --apple-green-hover: #30b151;
+            --apple-border: #e5e5ea;
+            --apple-red: #ff3b30;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 300;
+            font-size: 40px;
+            margin-bottom: 50px;
+            letter-spacing: -0.02em;
+            color: #000;
+        }
+
+        .card {
+            background: var(--apple-card);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: -0.01em;
+            color: #1d1d1f;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        #deskripsi {
+            grid-column: 1 / -1;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 16px 20px;
+            border: 1px solid var(--apple-border);
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+            outline: none;
+            background-color: #fafafa;
+        }
+
+        input:focus {
+            border-color: var(--apple-green);
+            box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.15);
+            background-color: #ffffff;
+        }
+
+        input::placeholder {
+            color: #a1a1a6;
+        }
+
+        button.primary-btn {
+            background-color: var(--apple-green);
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 30px;
+            /* pill shape */
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            display: block;
+            margin: 0 auto;
+            letter-spacing: -0.01em;
+        }
+
+        button.primary-btn:hover {
+            background-color: var(--apple-green-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
+        }
+
+        button.primary-btn:active {
+            transform: translateY(1px) scale(0.98);
+            box-shadow: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-variant-numeric: tabular-nums;
+        }
+
+        th,
+        td {
+            padding: 20px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--apple-border);
+        }
+
+        th {
+            font-weight: 500;
+            color: var(--apple-text-muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding-bottom: 16px;
+        }
+
+        td {
+            font-size: 16px;
+            vertical-align: middle;
+            color: #1d1d1f;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        .btn-icon {
+            background: none;
+            border: none;
+            color: #c7c7cc;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.2s;
+            padding: 8px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .btn-icon:hover {
+            color: var(--apple-red);
+            background-color: rgba(255, 59, 48, 0.1);
+        }
+
+        .btn-icon:active {
+            transform: scale(0.92);
+        }
+
+        tbody tr {
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f7;
+        }
+
+        #output {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Manajemen Produk. Tugas 5</h2>
+
+        <div class="card">
+            <h3>Tambah Ide Baru</h3>
+            <div class="form-group">
+                <input type="number" id="id" placeholder="ID Produk">
+                <input type="text" id="nama" placeholder="Nama Produk">
+                <input type="number" id="harga" placeholder="Harga (Rp)">
+                <input type="number" id="stok" placeholder="Stok">
+                <input type="text" id="deskripsi" placeholder="Deskripsi Singkat">
+            </div>
+            <button id="btnTambah" class="primary-btn">Tambah Produk</button>
+        </div>
+
+        <div class="card">
+            <h3>Daftar Produk</h3>
+            <div id="output">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
