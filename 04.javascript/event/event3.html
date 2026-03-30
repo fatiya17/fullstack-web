@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+
+<body>
+    <button id="addChild">Tambah Child</button>
+    <div style="padding: 20px; background-color: lightgray;" id="parent">
+        <div id="child" style="background-color: aqua;" padding="20px">Child 1</div>
+        <div id="child" style="background-color: lightgreen;" padding="20px">Child 2</div>
+        <div id="child" style="background-color: lightcoral;" padding="20px">Child 3</div>
+    </div>
+
+    <script>
+        // event delegation
+        document.getElementById('parent').addEventListener('click', function(event) {
+            if (event.target.matches('#child')) {
+                alert('Clicked on: ' + event.target.textContent);
+            }
+        });
+
+        // add new child dynamically
+        document.getElementById('addChild').addEventListener('click', function() {
+            let newChild = document.createElement('div');
+            newChild.id = 'child';
+            newChild.style.backgroundColor = 'lightyellow';
+            newChild.style.padding = '20px';
+            newChild.textContent = 'New Child';
+            document.getElementById('parent').appendChild(newChild);
+        });
+    </script>
+</body>
+
+</html>
