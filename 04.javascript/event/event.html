@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+    <!-- event handler inline html -->
+    <button onclick="alert('Button clicked!')">
+        Click Me
+    </button>
+
+    <!-- event menggunakan properti dan DOM -->
+    <button id="myButton">
+        Click Me
+    </button>
+
+    <button id="changeColor">Ubah Warna</button>
+    <script>
+        let button = document.getElementById('myButton');
+        // button.onclick = function() {
+        //     alert('Button clicked!');
+        // };
+        button.addEventListener('click', function() {
+            alert('Button clicked!');
+        });
+        button.addEventListener('click', function() {
+            console.log('Button was clicked!');
+        });
+
+        let buttonColor = document.getElementById('changeColor');
+        buttonColor.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'lightblue';
+        });
+
+    </script>
+</body>
+</html>
