@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="judul">Contoh Jquery</h2>
+    <p class="text">Ini paragraph pertama</p>
+    <p class="text">Ini paragraph kedua</p>
+
+    <button id="ubah">Ubah</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#ubah").click(function(){
+                $("#judul").css("color", "red"); // selector id
+                $(".text").css("font-weight", "bold"); // selector class
+            });
+        });
+    </script>
+    
+</body>
+</html>
